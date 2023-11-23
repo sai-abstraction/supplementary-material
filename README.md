@@ -8,7 +8,7 @@ There are three catalogs with the models:
 
 ## Abstraction parameters
 
-In order to generate the overapproximating may-abstractions we used the following script:
+In order to generate the overapproximating may-abstractions we used the following script iteratively calling to `app.js` from EasyAbstraction4Uppaal tool:
 ```sh
 # set the path prefix
 MODELS_PREFIX='./concrete'
