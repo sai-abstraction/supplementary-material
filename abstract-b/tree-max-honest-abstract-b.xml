@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
+<nta>
+    <declaration>/*
+*/
+
+clock x;
+const int NA=4;
+
+chan share[NA+1][NA+1];
+int[0,3] shqual;</declaration>
+	<template>
+		<name>AI</name>
+		<parameter>int[1,NA] id</parameter>
+		<declaration>// Place local declarations here.
+
+int data;
+int completion;
+int mstatus;
+int[0,3] mqual;
+int info;
+const int __d_at_id0_of_data[3] = {0,1,2};
+const int __d_at_id0_of_completion[3] = {0,0,0};
+const int __d_at_id0_of_mstatus[3] = {0,0,0};
+const int __d_at_id0_of_info[3] = {0,0,0};
+const int __d_at_id1_of_data[4] = {0,0,0,0};
+const int __d_at_id1_of_completion[4] = {0,1,2,3};
+const int __d_at_id1_of_mstatus[4] = {0,0,0,0};
+const int __d_at_id1_of_info[4] = {0,0,0,0};
+const int __d_at_id2_of_data[1] = {0};
+const int __d_at_id2_of_completion[1] = {0};
+const int __d_at_id2_of_mstatus[1] = {0};
+const int __d_at_id2_of_info[1] = {0};
+const int __d_at_id3_of_data[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id3_of_completion[8] = {0,1,2,3,0,1,2,3};
+const int __d_at_id3_of_mstatus[8] = {0,0,0,0,1,1,1,1};
+const int __d_at_id3_of_info[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id4_of_data[4] = {0,0,0,0};
+const int __d_at_id4_of_completion[4] = {0,1,2,3};
+const int __d_at_id4_of_mstatus[4] = {1,1,1,1};
+const int __d_at_id4_of_info[4] = {0,0,0,0};
+const int __d_at_id5_of_data[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id5_of_completion[8] = {0,1,2,3,0,1,2,3};
+const int __d_at_id5_of_mstatus[8] = {0,0,0,0,1,1,1,1};
+const int __d_at_id5_of_info[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id6_of_data[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id6_of_completion[8] = {0,1,2,3,0,1,2,3};
+const int __d_at_id6_of_mstatus[8] = {0,0,0,0,1,1,1,1};
+const int __d_at_id6_of_info[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id7_of_data[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id7_of_completion[8] = {0,1,2,3,0,1,2,3};
+const int __d_at_id7_of_mstatus[8] = {0,0,0,0,1,1,1,1};
+const int __d_at_id7_of_info[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id8_of_data[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id8_of_completion[8] = {0,1,2,3,0,1,2,3};
+const int __d_at_id8_of_mstatus[8] = {0,0,0,0,1,1,1,1};
+const int __d_at_id8_of_info[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id9_of_data[8] = {0,0,0,0,0,0,0,0};
+const int __d_at_id9_of_completion[8] = {0,1,2,3,0,1,2,3};
+const int __d_at_id9_of_mstatus[8] = {0,0,0,0,1,1,1,1};
+const int __d_at_id9_of_info[8] = {0,0,0,0,0,0,0,0};
+const int __init_data = 0;
+const int __init_completion = 0;
+const int __init_mstatus = 0;
+const int __init_info = 0;
+void __assume_at_id0_of_data(int _){
+	data = __d_at_id0_of_data[_];
+}
+void __assume_at_id0_of_completion(int _){
+	completion = __d_at_id0_of_completion[_];
+}
+void __assume_at_id0_of_mstatus(int _){
+	mstatus = __d_at_id0_of_mstatus[_];
+}
+void __assume_at_id0_of_info(int _){
+	info = __d_at_id0_of_info[_];
+}
+void __assume_at_id1_of_data(int _){
+	data = __d_at_id1_of_data[_];
+}
+void __assume_at_id1_of_completion(int _){
+	completion = __d_at_id1_of_completion[_];
+}
+void __assume_at_id1_of_mstatus(int _){
+	mstatus = __d_at_id1_of_mstatus[_];
+}
+void __assume_at_id1_of_info(int _){
+	info = __d_at_id1_of_info[_];
+}
+void __assume_at_id2_of_data(int _){
+	data = __d_at_id2_of_data[_];
+}
+void __assume_at_id2_of_completion(int _){
+	completion = __d_at_id2_of_completion[_];
+}
+void __assume_at_id2_of_mstatus(int _){
+	mstatus = __d_at_id2_of_mstatus[_];
+}
+void __assume_at_id2_of_info(int _){
+	info = __d_at_id2_of_info[_];
+}
+void __assume_at_id3_of_data(int _){
+	data = __d_at_id3_of_data[_];
+}
+void __assume_at_id3_of_completion(int _){
+	completion = __d_at_id3_of_completion[_];
+}
+void __assume_at_id3_of_mstatus(int _){
+	mstatus = __d_at_id3_of_mstatus[_];
+}
+void __assume_at_id3_of_info(int _){
+	info = __d_at_id3_of_info[_];
+}
+void __assume_at_id4_of_data(int _){
+	data = __d_at_id4_of_data[_];
+}
+void __assume_at_id4_of_completion(int _){
+	completion = __d_at_id4_of_completion[_];
+}
+void __assume_at_id4_of_mstatus(int _){
+	mstatus = __d_at_id4_of_mstatus[_];
+}
+void __assume_at_id4_of_info(int _){
+	info = __d_at_id4_of_info[_];
+}
+void __assume_at_id5_of_data(int _){
+	data = __d_at_id5_of_data[_];
+}
+void __assume_at_id5_of_completion(int _){
+	completion = __d_at_id5_of_completion[_];
+}
+void __assume_at_id5_of_mstatus(int _){
+	mstatus = __d_at_id5_of_mstatus[_];
+}
+void __assume_at_id5_of_info(int _){
+	info = __d_at_id5_of_info[_];
+}
+void __assume_at_id6_of_data(int _){
+	data = __d_at_id6_of_data[_];
+}
+void __assume_at_id6_of_completion(int _){
+	completion = __d_at_id6_of_completion[_];
+}
+void __assume_at_id6_of_mstatus(int _){
+	mstatus = __d_at_id6_of_mstatus[_];
+}
+void __assume_at_id6_of_info(int _){
+	info = __d_at_id6_of_info[_];
+}
+void __assume_at_id7_of_data(int _){
+	data = __d_at_id7_of_data[_];
+}
+void __assume_at_id7_of_completion(int _){
+	completion = __d_at_id7_of_completion[_];
+}
+void __assume_at_id7_of_mstatus(int _){
+	mstatus = __d_at_id7_of_mstatus[_];
+}
+void __assume_at_id7_of_info(int _){
+	info = __d_at_id7_of_info[_];
+}
+void __assume_at_id8_of_data(int _){
+	data = __d_at_id8_of_data[_];
+}
+void __assume_at_id8_of_completion(int _){
+	completion = __d_at_id8_of_completion[_];
+}
+void __assume_at_id8_of_mstatus(int _){
+	mstatus = __d_at_id8_of_mstatus[_];
+}
+void __assume_at_id8_of_info(int _){
+	info = __d_at_id8_of_info[_];
+}
+void __assume_at_id9_of_data(int _){
+	data = __d_at_id9_of_data[_];
+}
+void __assume_at_id9_of_completion(int _){
+	completion = __d_at_id9_of_completion[_];
+}
+void __assume_at_id9_of_mstatus(int _){
+	mstatus = __d_at_id9_of_mstatus[_];
+}
+void __assume_at_id9_of_info(int _){
+	info = __d_at_id9_of_info[_];
+}
+void __reset_data(){
+	data = __init_data;
+}
+
+void __reset_completion(){
+	completion = __init_completion;
+}
+
+void __reset_mstatus(){
+	mstatus = __init_mstatus;
+}
+
+void __reset_info(){
+	info = __init_info;
+}
+
+		</declaration>
+		<location id="id0" x="-221" y="-306">
+			<name>id0</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id1" x="-340" y="-102">
+			<name>id1</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id2" x="-340" y="-306">
+			<name>id2</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id3" x="-102" y="-102">
+			<name>id3</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id4" x="136" y="-102">
+			<name>id4</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id5" x="-102" y="102">
+			<name>id5</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id6" x="17" y="306">
+			<name>id6</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id7" x="-42" y="408">
+			<name>id7</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id8" x="-102" y="612">
+			<name>wait</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<location id="id9" x="76" y="408">
+			<name>id9</name>
+<label kind="invariant">x&lt;=0</label>/
+		</location>
+		<init ref="id2"/>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+				<label kind="guard">id*2+1&lt;=NA</label>
+				<label kind="synchronisation">share[id][id*2+1]!</label>
+				<label kind="assignment">shqual=mqual</label>
+		</transition>
+		<transition>
+			<source ref="id9"/>
+			<target ref="id8"/>
+				<label kind="synchronisation">share[id][id*2]!</label>
+				<label kind="assignment">shqual=mqual</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+				<label kind="guard">id&gt;1 &amp;&amp; id*2&lt;=NA</label>
+				<label kind="synchronisation">share[id/2][id]?</label>
+				<label kind="assignment">mqual=(mqual&lt;shqual)*shqual+(mqual&gt;=shqual)*mqual,
+shqual=0</label>
+		</transition>
+		<transition>
+			<source ref="id7"/>
+			<target ref="id8"/>
+				<label kind="guard">id*2+1&gt;NA</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id9"/>
+				<label kind="guard">id*2+1&lt;=NA</label>
+				<label kind="synchronisation">share[id][id*2+1]!</label>
+				<label kind="assignment">shqual=mqual</label>
+		</transition>
+		<transition>
+			<source ref="id6"/>
+			<target ref="id7"/>
+				<label kind="synchronisation">share[id][id*2]!</label>
+				<label kind="assignment">shqual=mqual</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id6"/>
+				<label kind="guard">id==1&amp;&amp;id*2&lt;=NA</label>
+		</transition>
+		<transition>
+			<source ref="id5"/>
+			<target ref="id8"/>
+				<label kind="guard">id*2&gt;NA</label>
+				<label kind="synchronisation">share[id/2][id]?</label>
+				<label kind="assignment">mqual=(mqual&lt;shqual)*shqual+(mqual&gt;=shqual)*mqual,
+shqual=0</label>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id8"/>
+		</transition>
+		<transition>
+			<source ref="id8"/>
+			<target ref="id3"/>
+		</transition>
+		<transition>
+			<source ref="id4"/>
+			<target ref="id5"/>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+				<label kind="select">_:int[0,7]</label>
+				<label kind="guard">__d_at_id3_of_info[_] == 1</label>
+				<label kind="assignment">mqual=mqual+(mqual&lt;2)</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+				<label kind="select">_:int[0,7]</label>
+				<label kind="guard">__d_at_id3_of_info[_] == 0</label>
+				<label kind="assignment">mqual=mqual-(mqual&gt;0)</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id4"/>
+				<label kind="select">_:int[0,7]</label>
+				<label kind="guard">__d_at_id3_of_info[_]</label>
+				<label kind="assignment">mqual=mqual-(mqual&gt;0)</label>
+		</transition>
+		<transition>
+			<source ref="id3"/>
+			<target ref="id3"/>
+				<label kind="select">_:int[0,7]</label>
+				<label kind="guard">__d_at_id3_of_info[_]</label>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id3"/>
+		</transition>
+		<transition>
+			<source ref="id1"/>
+			<target ref="id5"/>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id0"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id1"/>
+		</transition>
+		<transition>
+			<source ref="id0"/>
+			<target ref="id0"/>
+				<label kind="select">_:int[0,2]</label>
+				<label kind="guard">__d_at_id0_of_data[_]!= 2</label>
+		</transition>
+		<transition>
+			<source ref="id2"/>
+			<target ref="id1"/>
+		</transition>
+	</template>
+	<system>// Place template instantiations here.
+
+// List one or more processes to be composed into a system.
+
+system AI;
+</system>
+    <queries>
+        <query>
+            <formula></formula>
+            <comment></comment>
+        </query>
+    </queries>
+</nta>
