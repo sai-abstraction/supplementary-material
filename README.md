@@ -35,7 +35,7 @@ for f in $(ls "$MODELS_PREFIX" | grep -P '.xml$'); do
 done
 ```
 
-The content of utility scripts that remore and restore of auxiliary invariants over all locations is as follows:
+The content of utility scripts that remore and restore auxiliary invariants over all locations is as follows:
 ```sh
 # rem-inv.sh
 sed -i '/<label kind="invariant"./d' $1
